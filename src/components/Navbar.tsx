@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
           <span className="hcm-navbar__icon" aria-hidden>
             <LotusIcon />
           </span>
-          <span className="hcm-navbar__title">Tư tưởng HCM</span>
+          <span className="hcm-navbar__title">Tư tưởng Hồ Chí Minh về con người</span>
         </a>
 
         <input type="checkbox" id="hcm-nav-toggle" className="hcm-navbar__toggle" aria-label="Mở menu" />

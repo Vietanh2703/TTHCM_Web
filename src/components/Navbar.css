@@ -49,6 +49,13 @@
   box-shadow: var(--hcm-shadow);
 }
 
+.hcm-navbar__icon img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
 .hcm-navbar__title {
   font-weight: 700;
   letter-spacing: 0.3px;

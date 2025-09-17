@@ -1,0 +1,33 @@
+/* Layout wrappers */
+.app-container { display: flex; flex-direction: column; min-height: 100vh; }
+.home { flex: 1 1 auto; }
+
+/* Hero section */
+.hero {
+  padding: 48px 16px 24px;
+  text-align: center;
+  background: radial-gradient(1200px 400px at 50% -50%, rgba(46,204,113,0.12), transparent),
+              radial-gradient(800px 300px at 80% -20%, rgba(241,196,15,0.08), transparent);
+}
+.hero h1 { font-size: 2rem; margin: 0 0 8px; }
+.hero .subtitle { margin: 0 auto; max-width: 680px; color: #5b6b76; }
+.cta-group { margin-top: 18px; display: inline-flex; gap: 10px; }
+
+/* Content */
+.content { max-width: 1000px; margin: 0 auto; padding: 24px 16px 56px; }
+.card {
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* Responsive tweaks */
+@media (min-width: 640px) {
+  .hero { padding: 64px 24px 32px; }
+  .hero h1 { font-size: 2.4rem; }
+}
+
+
+/* Page-specific gallery styles moved to pages/Homepage.css */

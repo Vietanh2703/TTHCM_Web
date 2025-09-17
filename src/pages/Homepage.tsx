@@ -3,30 +3,16 @@ import {useState} from "react";
 import image1 from '../assets/1.jpg';
 import image2 from '../assets/2.jpg';
 import { useChatbaseWidget } from '../hooks/useChatbaseWidget';
+import type {BlogPost} from '../types/blog';
 
 
 const Homepage = () => {
     useChatbaseWidget(true);  // Show widget on homepage
 
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItem, setSelectedItem] = useState<BlogPost | null>(null);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isContentVisible, setIsContentVisible] = useState(true);
-
-    const handleItemClick = (item) => {
-        setSelectedItem(item);
-        setIsPopupOpen(true);
-    };
-
-    const closePopup = () => {
-        setIsPopupOpen(false);
-        setIsContentVisible(true); // Reset content visibility when closing
-        setTimeout(() => setSelectedItem(null), 300); // Delay to allow animation
-    };
-
-    const toggleContent = () => {
-        setIsContentVisible(!isContentVisible);
-    };
-    const galleryItems = [
+    const galleryItems: BlogPost[] = [
         {
             id: 1,
             title: "69 Flavio Burg Suite",
@@ -166,6 +152,21 @@ const Homepage = () => {
             readTime: "4 min read"
         }
     ];
+
+    const handleItemClick = (item: BlogPost) => {
+        setSelectedItem(item);
+        setIsPopupOpen(true);
+    };
+
+    const closePopup = () => {
+        setIsPopupOpen(false);
+        setIsContentVisible(true); // Reset content visibility when closing
+        setTimeout(() => setSelectedItem(null), 300); // Delay to allow animation
+    };
+
+    const toggleContent = () => {
+        setIsContentVisible(!isContentVisible);
+    };
 
     return (
         <div className="min-h-screen">

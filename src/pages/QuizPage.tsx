@@ -280,7 +280,7 @@ const QuizSystem: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answers, setAnswers] = useState<Record<string, string>>({})
     const [timeLeft, setTimeLeft] = useState(20 * 60) // 20 phút = 1200 giây
-    const [startTime, setStartTime] = useState<Date | null>(null)
+    const [timer, setTimer] = useState<number | null>(null);
 
     // Lấy ngẫu nhiên 20 câu hỏi từ 50 câu
     const selectRandomQuestions = useCallback(() => {
@@ -335,7 +335,7 @@ const QuizSystem: React.FC = () => {
         const handleBeforeUnload = (e: BeforeUnloadEvent) => {
             if (phase === 'quiz') {
                 e.preventDefault()
-                return 'Bạn có chắc muốn tho��t? Tiến trình làm bài sẽ bị mất.'
+                return 'Bạn có chắc muốn tho��t? Tiến trình làm bài s�� bị mất.'
             }
         }
 
@@ -354,7 +354,6 @@ const QuizSystem: React.FC = () => {
         setAnswers({})
         setCurrentIndex(0)
         setTimeLeft(20 * 60)
-        setStartTime(new Date())
         setPhase('quiz')
     }
 
@@ -384,7 +383,7 @@ const QuizSystem: React.FC = () => {
         setAnswers({})
         setCurrentIndex(0)
         setTimeLeft(20 * 60)
-        setStartTime(null)
+        setTimer(null);
     }
 
     const formatTime = (seconds: number) => {

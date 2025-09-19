@@ -280,7 +280,7 @@ const QuizSystem: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answers, setAnswers] = useState<Record<string, string>>({})
     const [timeLeft, setTimeLeft] = useState(20 * 60) // 20 phút = 1200 giây
-    const [timer, setTimer] = useState<number | null>(null);
+    const [, setTimer] = useState<number | null>(null);
 
     // Lấy ngẫu nhiên 20 câu hỏi từ 50 câu
     const selectRandomQuestions = useCallback(() => {

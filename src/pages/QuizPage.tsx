@@ -14,265 +14,385 @@ type Question = {
     explanation?: string
 }
 
-// Bộ câu hỏi mở rộng (50 câu)
 const questionBank: Question[] = [
     {
         id: 'q1',
-        text: 'Chủ tịch Hồ Chí Minh sinh năm nào?',
+        text: 'Vì sao Hồ Chí Minh nói “con người là vốn quý nhất” trong cách mạng ?',
         choices: [
-            { id: 'a', text: '1890' },
-            { id: 'b', text: '1895' },
-            { id: 'c', text: '1900' },
-            { id: 'd', text: '1911' },
+            { id: 'a', text: 'Vì con người là nguồn lực tinh thần, vật chất để xây dựng xã hội.' },
+            { id: 'b', text: 'Vì con người sở hữu tư liệu sản xuất quan trọng.' },
+            { id: 'c', text: 'Vì con người là tài sản của Nhà nước.' },
+            { id: 'd', text: 'Vì con người không thể bị thay thế bằng máy móc.' },
         ],
         correctId: 'a',
-        explanation: 'Bác Hồ sinh ngày 19/5/1890 tại Kim Liên, Nam Đàn, Nghệ An.'
+        explanation: 'Con người là lực lượng quyết định mọi hoạt động xã hội — cả về sáng tạo, lao động và tinh thần.'
     },
     {
         id: 'q2',
-        text: 'Tác phẩm "Đường Kách Mệnh" ra đời vào khoảng thời gian nào?',
+        text: 'Đâu là quan điểm của Hồ Chí Minh về xây dựng con người ?',
         choices: [
-            { id: 'a', text: '1925-1927' },
-            { id: 'b', text: '1930-1931' },
-            { id: 'c', text: '1941-1945' },
-            { id: 'd', text: '1946-1950' },
+            { id: 'a', text: 'Con người cụ thể, văn hóa' },
+            { id: 'b', text: 'Con người cụ thể, lịch sử' },
+            { id: 'c', text: 'Con người cụ thể, xã hội' },
+            { id: 'd', text: 'Con người lịch sử, văn hóa' },
         ],
-        correctId: 'a',
-        explanation: 'Đường Kách Mệnh tập hợp các bài giảng của Nguyễn Ái Quốc tại Quảng Châu (1925-1927).'
+        correctId: 'b',
+        explanation: 'quan điểm “con người cụ thể, lịch sử” của Hồ Chí Minh thể hiện lập trường duy vật lịch sử, gắn việc xây dựng con người mới với hoàn cảnh xã hội, nhiệm vụ cách mạng, và điều kiện phát triển thực tế của dân tộc trong từng thời kỳ.'
     },
     {
         id: 'q3',
-        text: '"Cần, kiệm, liêm, chính" là nội dung thuộc hệ giá trị nào trong tư tưởng Hồ Chí Minh?',
+        text: 'Theo Hồ Chí Minh, không phải mọi con người đều trở thành động lực, mà phải là những con người',
         choices: [
-            { id: 'a', text: 'Giá trị văn hoá' },
-            { id: 'b', text: 'Đạo đức cách mạng' },
-            { id: 'c', text: 'Chủ nghĩa xã hội' },
-            { id: 'd', text: 'Đường lối kháng chiến' },
+            { id: 'a', text: 'Có đạo đức' },
+            { id: 'b', text: 'Có năng lực' },
+            { id: 'c', text: 'Có trình độ và hiểu biết' },
+            { id: 'd', text: 'Được giác ngộ và tổ chức.' },
         ],
-        correctId: 'b',
-        explanation: 'Cần, kiệm, liêm, chính, chí công vô tư là những chuẩn mực đạo đức cách mạng.'
+        correctId: 'd',
+        explanation: 'Theo Hồ Chí Minh, không phải mọi con người tự nhiên đã là động lực, mà chỉ khi được giác ngộ về lý tưởng cách mạng và đặt trong tổ chức cách mạng thì sức mạnh của họ mới phát huy hiệu quả, tạo thành động lực to lớn thúc đẩy sự nghiệp cách mạng.'
     },
     {
         id: 'q4',
-        text: 'Năm nào Việt Nam giành độc lập, khai sinh nước Việt Nam Dân chủ Cộng hoà?',
+        text: 'Đâu là quan điểm của Hồ Chí Minh về chiến lược trồng người ?',
         choices: [
-            { id: 'a', text: '1930' },
-            { id: 'b', text: '1945' },
-            { id: 'c', text: '1954' },
-            { id: 'd', text: '1975' },
+            { id: 'a', text: '"Trồng người" là trung tâm phát triển của nhân loại' },
+            { id: 'b', text: '"Trồng người" là trung tâm của phát triển xã hội' },
+            { id: 'c', text: '"Trồng người" là trung tâm phát triển thế giới' },
+            { id: 'd', text: 'Không có đáp án đúng' },
         ],
         correctId: 'b',
-        explanation: 'Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.'
+        explanation: 'Hồ Chí Minh coi “Trồng người” là chiến lược trung tâm của phát triển xã hội vì con người vừa là mục tiêu vừa là động lực của cách mạng; bồi dưỡng thế hệ mới chính là bảo đảm cho sự phát triển bền vững, lâu dài của dân tộc và đất nước.'
     },
     {
         id: 'q5',
-        text: 'Theo Bác Hồ, "Dễ trăm lần không dân cũng chịu, khó vạn lần dân liệu cũng xong" thể hiện nguyên tắc nào?',
+        text: 'Chiến lược trồng người được Hồ Chí Minh xác định ở vị trí nào trong sự phát triển kinh tế xã hội?',
         choices: [
-            { id: 'a', text: 'Lấy dân làm gốc' },
-            { id: 'b', text: 'Công – nông – trí' },
-            { id: 'c', text: 'Đoàn kết quốc tế' },
-            { id: 'd', text: 'Tự lực tự cường' },
+            { id: 'a', text: 'Cơ bản' },
+            { id: 'b', text: 'Trọng tâm' },
+            { id: 'c', text: 'Quan trọng' },
+            { id: 'd', text: 'Cần thiết' },
         ],
         correctId: 'a',
-        explanation: 'Tư tưởng "lấy dân làm gốc" thể hiện nhất quán trong quan điểm của Hồ Chí Minh.'
+        explanation: 'Chiến lược trồng người được Hồ Chí Minh xác định ở vị trí cơ bản trong sự phát triển kinh tế xã hội'
     },
     {
         id: 'q6',
-        text: 'Đảng Cộng sản Việt Nam được thành lập vào năm nào?',
+        text: 'Yêu thương con người được Hồ Chí Minh xác định là một trong những phẩm chất đạo đức cao đẹp nhất. Người nói, người cách mạng là người giàu tình cảm, có tình cảm cách mạng:',
         choices: [
-            { id: 'a', text: '1925' },
-            { id: 'b', text: '1930' },
-            { id: 'c', text: '1941' },
-            { id: 'd', text: '1945' },
+            { id: 'a', text: 'mới đi làm cách mạng.' },
+            { id: 'b', text: 'mới yêu thương con người.' },
+            { id: 'c', text: 'mới là người cách mạng.' },
         ],
-        correctId: 'b',
-        explanation: 'Đảng Cộng sản Việt Nam được thành lập ngày 3/2/1930 tại Hồng Kông.'
+        correctId: 'a',
+        explanation: 'Người cách mạng là người giàu tình cảm, có tình cảm cách mạng mới đi làm cách mạng'
     },
     {
         id: 'q7',
-        text: 'Tên thật của Chủ tịch Hồ Chí Minh là gì?',
+        text: 'Khái niệm con người trong tư tưởng Hồ Chí Minh để chỉ:',
         choices: [
-            { id: 'a', text: 'Nguyễn Sinh Cung' },
-            { id: 'b', text: 'Nguyễn Tất Thành' },
-            { id: 'c', text: 'Nguyễn Ái Quốc' },
-            { id: 'd', text: 'Hồ Chí Minh' },
+            { id: 'a', text: 'Một con người cụ thể.' },
+            { id: 'b', text: 'Một cộng đồng người.' },
+            { id: 'c', text: 'Con người cụ thể gắn với hoàn cảnh lịch sử cụ thể.' },
+            { id: 'd', text: 'Tất cả các phương án.' },
         ],
-        correctId: 'a',
-        explanation: 'Tên thật của Bác Hồ là Nguyễn Sinh Cung, sau đổi thành Nguy���n Tất Thành.'
+        correctId: 'c',
+        explanation: 'Con người trong tư tưởng Hồ Chí Minh để chỉ con người cụ thể gắn với hoàn cảnh lịch sử cụ thể.'
     },
     {
         id: 'q8',
-        text: 'Việt Minh được thành lập vào năm nào?',
+        text: 'Hồ Chí Minh xem xét con người trong sự thống nhất của hai mặt đối lập: thiện và ác, hay và dở, tốt và xấu , hiền và dữ,... nhưng:',
         choices: [
-            { id: 'a', text: '1930' },
-            { id: 'b', text: '1941' },
-            { id: 'c', text: '1945' },
-            { id: 'd', text: '1954' },
+            { id: 'a', text: '"dù là xấu, tốt, văn minh hay dã man đều có lý"' },
+            { id: 'b', text: '"dù là xấu, tốt, văn minh hay dã man đều có tình"' },
+            { id: 'c', text: '"dù là xấu, tốt, văn minh hay dã man đều có đức"' },
+            { id: 'd', text: '"dù là xấu, tốt, văn minh hay dã man đều có học"' },
         ],
         correctId: 'b',
-        explanation: 'Mặt trận Việt Minh được thành lập ngày 19/5/1941 tại Pác Bó, Cao Bằng.'
+        explanation: 'Theo Hồ Chí Minh, trong mỗi con người luôn tiềm ẩn yếu tố tốt đẹp, có thể đánh thức và phát huy; nhờ tình thương và giáo dục đúng đắn, con người sẽ được cảm hóa, hướng thiện và trở thành người có ích cho xã hội.'
     },
     {
         id: 'q9',
-        text: 'Khẩu hiệu "Độc lập - Tự do - Hạnh phúc" xuất hiện lần đầu trong văn kiện nào?',
+        text: 'Con người trong quan điểm của Hồ Chí Minh được nhìn nhận như một:',
         choices: [
-            { id: 'a', text: 'Tuyên ngôn Độc lập' },
-            { id: 'b', text: 'Chính cương Việt Minh' },
-            { id: 'c', text: 'Hiến pháp 1946' },
-            { id: 'd', text: 'Di chúc Hồ Chí Minh' },
+            { id: 'a', text: 'Chỉnh thể' },
+            { id: 'b', text: 'Tế bào' },
+            { id: 'c', text: 'Xã hội' },
+            { id: 'd', text: 'Cộng đồng' },
         ],
         correctId: 'a',
-        explanation: 'Khẩu hiệu này xuất hiện trong Tuyên ngôn Độc lập ngày 2/9/1945.'
+        explanation: 'Con người trong quan điểm của Hồ Chí Minh được nhìn nhận như một chỉnh thể.'
     },
     {
         id: 'q10',
-        text: 'Theo Hồ Chí Minh, yếu tố nào quy��t định thành công của cách mạng?',
+        text: 'Theo tư tưởng Hồ Chí Minh, con người Việt Nam trong thời đại mới phải có',
         choices: [
-            { id: 'a', text: 'Vũ khí hiện đại' },
-            { id: 'b', text: 'Nhân dân' },
-            { id: 'c', text: 'Lãnh đạo tài ba' },
-            { id: 'd', text: 'Điều kiện quốc tế' },
+            { id: 'a', text: '3 phẩm chất cơ bản' },
+            { id: 'b', text: '4 phẩm chất cơ bản' },
+            { id: 'c', text: '5 phẩm chất cơ bản' },
+            { id: 'd', text: '6 phẩm chất cơ bản' },
         ],
         correctId: 'b',
-        explanation: 'Theo Bác Hồ, nhân dân là yếu tố quyết định thành công của cách mạng.'
+        explanation: 'Theo tư tưởng Hồ Chí Minh, con người Việt Nam trong thời đại mới phải có 4 phẩm chất cơ bản sau:\n' +
+            '\n' +
+            'Có tinh thần yêu nước, yêu chủ nghĩa xã hội – trung thành với Tổ quốc, đặt lợi ích dân tộc và nhân dân lên trên hết.\n' +
+            '\n' +
+            'Có đạo đức cách mạng trong sáng – cần, kiệm, liêm, chính, chí công vô tư; sống nhân ái, vị tha, vì tập thể.\n' +
+            '\n' +
+            'Có năng lực, trình độ, tri thức và sức khỏe – giỏi chuyên môn, kỹ thuật, không ngừng học tập, lao động sáng tạo, có ý chí vươn lên.\n' +
+            '\n' +
+            'Có lối sống văn hóa, nếp sống lành mạnh – giản dị, trong sáng, tôn trọng kỷ luật, giữ gìn bản sắc dân tộc, tiếp thu tinh hoa nhân loại.'
     },
     {
         id: 'q11',
-        text: 'Bác Hồ qua đời vào ngày nào?',
+        text: 'Theo Hồ Chí Minh, con người luôn có xu hướng vươn lên cái Chân - Thiện - Mỹ, mặc dù:',
         choices: [
-            { id: 'a', text: '2/9/1969' },
-            { id: 'b', text: '19/5/1969' },
-            { id: 'c', text: '3/2/1969' },
-            { id: 'd', text: '30/4/1975' },
+            { id: 'a', text: '"có thế này, có thế khác"' },
+            { id: 'b', text: '"có giàu, có nghèo"' },
+            { id: 'c', text: '"có thiện, có ác "' },
+            { id: 'd', text: '"có sang, có hèn "' },
         ],
         correctId: 'a',
-        explanation: 'Chủ tịch Hồ Chí Minh qua đời lúc 9h47 ngày 2/9/1969.'
+        explanation: '"có thế này, có thế khác"'
     },
     {
         id: 'q12',
-        text: 'Tác phẩm "Nhật ký trong tù" được viết khi nào?',
+        text: 'Hồ Chí Minh ví tuổi trẻ như:',
         choices: [
-            { id: 'a', text: '1940-1941' },
-            { id: 'b', text: '1942-1943' },
-            { id: 'c', text: '1945-1946' },
-            { id: 'd', text: '1954-1955' },
+            { id: 'a', text: 'Mùa xuân của xã hội' },
+            { id: 'b', text: 'Mùa xuân của đất nước' },
+            { id: 'c', text: 'Mùa xuân của Đảng' },
+            { id: 'd', text: 'Mùa xuân của Nhà nước' },
         ],
         correctId: 'b',
-        explanation: '"Nhật ký trong tù" được viết trong thời gian Bác Hồ bị giam tại Trung Quốc (1942-1943).'
+        explanation: 'Hồ Chí Minh ví tuổi trẻ như mùa xuân của đất nước.'
     },
     {
         id: 'q13',
-        text: 'Theo Hồ Chí Minh, "Học, học nữa, học mãi" nhằm mục đích gì?',
+        text: 'Theo Hồ Chí Minh, để thực hiện chiến lược "trồng người", cần có nhiều biện pháp, nhưng biện pháp quan trọng bậc nhất là',
         choices: [
-            { id: 'a', text: 'Nâng cao trình độ cá nhân' },
-            { id: 'b', text: 'Phục vụ nhân dân tốt hơn' },
-            { id: 'c', text: 'Theo kịp thời đại' },
-            { id: 'd', text: 'Tất cả các ý trên' },
+            { id: 'a', text: 'Thuyết phục - nêu gương' },
+            { id: 'b', text: 'Cảm hóa - động viên' },
+            { id: 'c', text: 'Giáo dục - đào tạo' },
+            { id: 'd', text: 'Ép buộc - cưỡng chế' },
         ],
-        correctId: 'd',
-        explanation: 'Việc học tập nhằm nâng cao trình độ để phục vụ nhân dân và theo kịp thời đại.'
+        correctId: 'c',
+        explanation: 'Giáo dục - đào tạo'
     },
     {
         id: 'q14',
-        text: 'Chiến thắng Điện Biên Phủ diễn ra vào năm nào?',
+        text: 'Hồ Chí Minh khẳng định sức mạnh của Đảng bắt nguồn từ:',
         choices: [
-            { id: 'a', text: '1953' },
-            { id: 'b', text: '1954' },
-            { id: 'c', text: '1955' },
-            { id: 'd', text: '1975' },
+            { id: 'a', text: 'Con người' },
+            { id: 'b', text: 'Tổ chức' },
+            { id: 'c', text: 'Dân tộc' },
         ],
-        correctId: 'b',
-        explanation: 'Chiến thắng Điện Biên Phủ kết thúc ngày 7/5/1954.'
+        correctId: 'a',
+        explanation: 'Hồ Chí Minh khẳng định sức mạnh của Đảng bắt nguồn từ con người.'
     },
     {
         id: 'q15',
-        text: 'Hội nghị Geneva về Đông Dương diễn ra vào năm nào?',
+        text: 'Theo Hồ Chí Minh, nội dung nào không đúng để phát huy động lực con người:',
         choices: [
-            { id: 'a', text: '1953' },
-            { id: 'b', text: '1954' },
-            { id: 'c', text: '1955' },
-            { id: 'd', text: '1956' },
+            { id: 'a', text: 'Phát huy sức mạnh đoàn kết của cả cộng đồng dân tộc.' },
+            { id: 'b', text: 'Phát huy sức mạnh của cá nhân con người.' },
+            { id: 'c', text: 'Phát huy các yếu tố chính trị, tinh thần.' },
         ],
         correctId: 'b',
-        explanation: 'Hội nghị Geneva diễn ra từ tháng 4 đến tháng 7/1954.'
+        explanation: 'Phát huy sức mạnh của cá nhân con người. (sai)'
     },
     {
         id: 'q16',
-        text: 'Theo Hồ Chí Minh, đức tính quan trọng nhất của cán bộ là gì?',
+        text: 'Giải phóng con người theo tư tưởng Hồ Chí Minh là:',
         choices: [
-            { id: 'a', text: 'Thông minh' },
-            { id: 'b', text: 'Trung thực' },
-            { id: 'c', text: 'Can đảm' },
-            { id: 'd', text: 'Chí công vô tư' },
+            { id: 'a', text: 'Giải phóng con người với tư cách từng cá nhân' },
+            { id: 'b', text: 'Giải phóng con người với tư cách là cả loài người.' },
+            { id: 'c', text: 'Giải phóng con người với tư cách từng cá nhân và cả loài người.' },
+            { id: 'd', text: 'Giải phóng những người bị bóc lột.' },
         ],
-        correctId: 'd',
-        explanation: 'Chí công vô tư là đức tính cao quý nhất của người cán bộ theo Bác Hồ.'
+        correctId: 'c',
+        explanation: 'Giải phóng con người với tư cách từng cá nhân và cả loài người.'
     },
     {
         id: 'q17',
-        text: 'Khái niệm "dân tộc giải phóng" trong tư tưởng Hồ Chí Minh có nghĩa gì?',
+        text: 'Tư tưởng sau của Hồ Chí Minh được thể hiện ở đâu ?"Quyền bình đẳng cá nhân của con người theo dân chủ tư sản Pháp và Mỹ đã trở thành quyền bình đẳng của các cá nhân, các dân tộc trên toàn thế giới"',
         choices: [
-            { id: 'a', text: 'Giành độc lập dân tộc' },
-            { id: 'b', text: 'Xóa bỏ áp bức giai cấp' },
-            { id: 'c', text: 'Cả A và B' },
-            { id: 'd', text: 'Chỉ có A' },
+            { id: 'a', text: 'Trong Chính Cương vắn tắt.' },
+            { id: 'b', text: 'Trong Hiến pháp 1946.' },
+            { id: 'c', text: 'Trong Tuyên ngôn Độc lập.' },
+            { id: 'd', text: 'Trong Di chúc.' },
         ],
         correctId: 'c',
-        explanation: 'Dân tộc giải phóng bao gồm cả giành độc lập dân tộc và giải phóng giai cấp.'
+        explanation: 'Trong Tuyên ngôn, Người đã trích dẫn Tuyên ngôn Độc lập của Mỹ (1776) và Tuyên ngôn Nhân quyền và Dân quyền của Pháp (1789), rồi phát triển thành chân lý thời đại: không chỉ con người có quyền bình đẳng, mà các dân tộc trên thế giới cũng có quyền bình đẳng, tự do, quyền mưu cầu hạnh phúc.'
     },
     {
         id: 'q18',
-        text: 'Bác Hồ từng sử dụng bao nhiêu bút danh khác nhau?',
+        text: 'Chủ tịch Hồ Chí Minh quan niệm con người ở mấy nghĩa?',
         choices: [
-            { id: 'a', text: 'Khoảng 50' },
-            { id: 'b', text: 'Khoảng 75' },
-            { id: 'c', text: 'Khoảng 160' },
-            { id: 'd', text: 'Khoảng 200' },
+            { id: 'a', text: 'Một nghĩa duy nhất' },
+            { id: 'b', text: 'Hai nghĩa' },
+            { id: 'c', text: 'Ba nghĩa' },
+            { id: 'd', text: 'Bốn nghĩa' },
         ],
         correctId: 'c',
-        explanation: 'Bác Hồ đã sử dụng khoảng 160 bút danh khác nhau trong cuộc đời.'
+        explanation: 'Con người được hiểu ở nghĩa hẹp (cá nhân), nghĩa rộng (cộng đồng) và nghĩa rộng hơn (nhân loại).'
     },
     {
         id: 'q19',
-        text: 'Cuộc Tổng tuyển cử đầu tiên ở Việt Nam diễn ra khi nào?',
+        text: '“Máu nào cũng là máu, người nào cũng là người” thể hiện tư tưởng gì?',
         choices: [
-            { id: 'a', text: '6/1/1946' },
-            { id: 'b', text: '2/9/1945' },
-            { id: 'c', text: '19/5/1946' },
-            { id: 'd', text: '3/2/1946' },
+            { id: 'a', text: 'Tình thương yêu con người' },
+            { id: 'b', text: 'Chủ nghĩa dân tộc' },
+            { id: 'c', text: 'Tinh thần đấu tranh giai cấp' },
+            { id: 'd', text: 'Ý chí kiên cường' },
         ],
         correctId: 'a',
-        explanation: 'Cuộc Tổng tuyển cử đầu tiên diễn ra ngày 6/1/1946.'
+        explanation: 'Khẳng định sự bình đẳng, nhân đạo, không phân biệt.'
     },
     {
         id: 'q20',
-        text: 'Theo Hồ Chí Minh, đoàn kết có ý nghĩa như thế n��o?',
+        text: '“Thắng không kiêu, bại không nản” nhấn mạnh phẩm chất gì?',
         choices: [
-            { id: 'a', text: 'Sức mạnh của dân tộc' },
-            { id: 'b', text: 'Điều kiện thắng lợi' },
-            { id: 'c', text: 'Truyền thống văn hóa' },
-            { id: 'd', text: 'Cả A và B' },
+            { id: 'a', text: 'Cứng nhắc' },
+            { id: 'b', text: 'Khiêm tốn, kiên trì' },
+            { id: 'c', text: 'Bảo thủ' },
+            { id: 'd', text: 'Phô trương' },
+        ],
+        correctId: 'b',
+        explanation: 'Thái độ bình tĩnh, cầu thị trong mọi tình huống.'
+    },
+    {
+        id: 'q21',
+        text: 'Đâu là quan điểm của Hồ Chí Minh về quyền con người ?',
+        choices: [
+            { id: 'a', text: 'Quyền con người độc lập với dân tộc' },
+            { id: 'b', text: 'Chỉ có quyền công dân' },
+            { id: 'c', text: 'Quyền con người quan trọng hơn độc lập' },
+            { id: 'd', text: 'Độc lập dân tộc là điều kiện để có quyền con người' },
         ],
         correctId: 'd',
-        explanation: 'Đoàn kết vừa là sức mạnh của dân tộc vừa là điều kiện thắng lợi.'
-    }
-]
-
-// Tạo thêm câu hỏi để đủ 50
-for (let i = 21; i <= 50; i++) {
-    questionBank.push({
-        id: `q${i}`,
-        text: `Câu hỏi số ${i} về tư tưởng Hồ Chí Minh?`,
+        explanation: 'Độc lập dân tộc gắn chặt với quyền con người.'
+    },
+    {
+        id: 'q21',
+        text: 'Đâu là quan điểm của Hồ Chí Minh về quyền con người ?',
         choices: [
-            { id: 'a', text: `Đáp án A câu ${i}` },
-            { id: 'b', text: `Đáp án B câu ${i}` },
-            { id: 'c', text: `Đáp án C câu ${i}` },
-            { id: 'd', text: `Đáp án D câu ${i}` },
+            { id: 'a', text: 'Quyền con người độc lập với dân tộc' },
+            { id: 'b', text: 'Chỉ có quyền công dân' },
+            { id: 'c', text: 'Quyền con người quan trọng hơn độc lập' },
+            { id: 'd', text: 'Độc lập dân tộc là điều kiện để có quyền con người' },
+        ],
+        correctId: 'd',
+        explanation: 'Độc lập dân tộc gắn chặt với quyền con người.'
+    },
+    {
+        id: 'q22',
+        text: 'Hồ Chí Minh coi giáo dục – đào tạo là gì trong xây dựng con người?',
+        choices: [
+            { id: 'a', text: 'Một biện pháp phụ' },
+            { id: 'b', text: 'Biện pháp quan trọng bậc nhất' },
+            { id: 'c', text: 'Hoạt động văn hóa đơn thuần' },
+            { id: 'd', text: 'Công việc lâu dài nhưng không cấp bách' },
+        ],
+        correctId: 'b',
+        explanation: 'Người nói “Vì lợi ích trăm năm thì phải trồng người”'
+    },
+    {
+        id: 'q23',
+        text: 'Quan niệm về con người xã hội chủ nghĩa bao gồm những yếu tố nào ?',
+        choices: [
+            { id: 'a', text: 'Tài năng và sức khỏe' },
+            { id: 'b', text: 'Đạo đức, trí tuệ, bản lĩnh, tác phong, lòng nhân ái' },
+            { id: 'c', text: 'Của cải vật chất' },
+            { id: 'd', text: 'Địa vị xã hội' },
+        ],
+        correctId: 'b',
+        explanation: 'Đạo đức, trí tuệ, bản lĩnh, tác phong, lòng nhân ái.'
+    },
+    {
+        id: 'q24',
+        text: 'Tại sao Hồ Chí Minh gắn xây dựng con người với xây dựng văn hóa ?',
+        choices: [
+            { id: 'a', text: 'Văn hóa chỉ để giải trí' },
+            { id: 'b', text: 'Văn hóa chỉ phục vụ lễ hội' },
+            { id: 'c', text: 'Văn hóa là nền tảng tinh thần, định hướng nhân cách' },
+            { id: 'd', text: 'Văn hóa thay thế chính trị' },
+        ],
+        correctId: 'c',
+        explanation: 'Văn hóa và con người luôn gắn bó chặt chẽ.'
+    },
+    {
+        id: 'q25',
+        text: 'Hồ Chí Minh cho rằng, muốn có độc lập dân tộc và chủ nghĩa xã hội, phải dựa vào đâu',
+        choices: [
+            { id: 'a', text: 'Sự lãnh đạo của một cá nhân kiệt xuất' },
+            { id: 'b', text: 'Nguồn viện trợ quốc tế' },
+            { id: 'c', text: 'Phát triển vũ khí hiện đại' },
+            { id: 'd', text: 'Sức mạnh đoàn kết của toàn dân' },
+        ],
+        correctId: 'd',
+        explanation: 'Độc lập và CNXH phải dựa trên sức mạnh nhân dân.'
+    },
+    {
+        id: 'q26',
+        text: 'Vai trò của con người trong quan hệ quốc tế theo Hồ Chí Minh là gì?',
+        choices: [
+            { id: 'a', text: 'Con người là nền tảng cho đoàn kết, hòa bình, hữu nghị' },
+            { id: 'b', text: 'Con người chỉ là công cụ ngoại giao' },
+            { id: 'c', text: 'Con người không liên quan đến ngoại giao' },
+            { id: 'd', text: 'Chỉ lãnh đạo mới có vai trò' },
         ],
         correctId: 'a',
-        explanation: `Giải thích cho câu ${i}.`
-    })
-}
+        explanation: 'Người coi trọng tình người, nhân phẩm làm nền tảng đoàn kết quốc tế.'
+    },
+    {
+        id: 'q27',
+        text: 'Hồ Chí Minh khẳng định “Con người là vốn quý nhất” có ý nghĩa sâu xa nào trong tư tưởng của Người?',
+        choices: [
+            { id: 'a', text: 'Khẳng định vai trò của con người như một nguồn lực sản xuất quan trọng ngang hàng với vốn và tài nguyên.' },
+            { id: 'b', text: 'Con người quý giá vì là sản phẩm hoàn thiện nhất của tự nhiên và văn hóa, nhưng chủ yếu mang ý nghĩa đạo đức, nhân văn.' },
+            { id: 'c', text: 'Con người là yếu tố trung tâm, vừa là mục tiêu phát triển, vừa là động lực của mọi tiến trình cách mạng và xây dựng xã hội mới.' },
+            { id: 'd', text: 'Ý muốn nhấn mạnh con người là tài sản đặc biệt của Đảng, cần được quản lý và sử dụng hợp lý.' },
+        ],
+        correctId: 'c',
+        explanation: 'Hồ Chí Minh không chỉ xem con người như một nguồn lực sản xuất hay một giá trị đạo đức trừu tượng, mà Người khẳng định con người là trung tâm của mọi chính sách và hành động cách mạng: mọi sự nghiệp cách mạng là vì con người và chỉ có thể thành công nhờ con người. Đây là quan niệm nhất quán, làm nền tảng cho tư tưởng “lấy dân làm gốc” và “trồng người” lâu dài.'
+    },
+    {
+        id: 'q28',
+        text: 'Hồ Chí Minh nhấn mạnh yếu tố nào là “cái gốc” của con người?',
+        choices: [
+            { id: 'a', text: 'Trí tuệ' },
+            { id: 'b', text: 'Sức khỏe' },
+            { id: 'c', text: 'Tài sản' },
+            { id: 'd', text: 'Đạo đức' },
+        ],
+        correctId: 'd',
+        explanation: 'Người coi đạo đức là nền tảng để hoàn thiện nhân cách.'
+    },
+    {
+        id: 'q29',
+        text: 'Hồ Chí Minh khẳng định vai trò nào của cán bộ trong công việc?',
+        choices: [
+            { id: 'a', text: 'Người quản lý bộ máy' },
+            { id: 'b', text: 'Người ban phát lợi ích' },
+            { id: 'c', text: 'Người thay thế nhân dân' },
+            { id: 'd', text: 'Gốc của mọi công việc' },
+        ],
+        correctId: 'd',
+        explanation: 'Cán bộ quyết định thành bại, là cầu nối giữa Đảng và dân.'
+    },
+    {
+        id: 'q30',
+        text: 'Trong tư tưởng Hồ Chí Minh, câu hiểu nào sau đây phản ánh chính xác nhất mối quan hệ giữa giải phóng dân tộc và giải phóng con người ?',
+        choices: [
+            { id: 'a', text: 'Giải phóng dân tộc và giải phóng con người là hoàn toàn đồng nhất về nội dung và thời điểm — nói khác đi, làm một là tự động có cả hai.' },
+            { id: 'b', text: 'Giải phóng con người có thể thực hiện trước, tức nâng cao quyền lợi và ý thức cá nhân rồi mới dẫn đến độc lập dân tộc; thứ tự có thể đảo ngược.' },
+            { id: 'c', text: 'Giải phóng dân tộc và giải phóng con người là hai mục tiêu độc lập; có thể thực hiện song song hoặc tách rời mà không phụ thuộc lẫn nhau.' },
+            { id: 'd', text: 'Giải phóng dân tộc là điều kiện tiền đề cần thiết, còn giải phóng con người là mục tiêu bao trùm cuối cùng; hai quá trình tương hỗ nhưng mang thứ tự lịch sử và logic.' },
+        ],
+        correctId: 'd',
+        explanation: 'Trong thực tiễn tư tưởng và hành động của Người, giải phóng dân tộc và giải phóng con người bổ trợ lẫn nhau — chiến đấu giành độc lập để bảo vệ quyền con người; đồng thời xây dựng xã hội mới để con người thật sự được giải phóng. Do đó cần cả hai, nhưng về thứ tự và tính logic, độc lập thường là điều kiện cần trước khi đạt được giải phóng con người toàn diện.'
+    },
+]
 
 const QuizSystem: React.FC = () => {
     const [phase, setPhase] = useState<'intro' | 'quiz' | 'result'>('intro')
@@ -282,7 +402,6 @@ const QuizSystem: React.FC = () => {
     const [timeLeft, setTimeLeft] = useState(20 * 60) // 20 phút = 1200 giây
     const [, setTimer] = useState<number | null>(null);
 
-    // Lấy ngẫu nhiên 20 câu hỏi từ 50 câu
     const selectRandomQuestions = useCallback(() => {
         const shuffled = [...questionBank].sort(() => 0.5 - Math.random())
         return shuffled.slice(0, 20)
@@ -335,7 +454,7 @@ const QuizSystem: React.FC = () => {
         const handleBeforeUnload = (e: BeforeUnloadEvent) => {
             if (phase === 'quiz') {
                 e.preventDefault()
-                return 'Bạn có chắc muốn tho��t? Tiến trình làm bài s�� bị mất.'
+                return 'Bạn có chắc muốn thoát? Tiến trình làm bài sẽ mất.'
             }
         }
 

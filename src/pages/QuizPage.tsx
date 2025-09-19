@@ -98,7 +98,7 @@ const questionBank: Question[] = [
             { id: 'd', text: 'Hồ Chí Minh' },
         ],
         correctId: 'a',
-        explanation: 'T��n thật của Bác Hồ là Nguyễn Sinh Cung, sau đổi thành Nguy���n Tất Thành.'
+        explanation: 'Tên thật của Bác Hồ là Nguyễn Sinh Cung, sau đổi thành Nguy���n Tất Thành.'
     },
     {
         id: 'q8',
@@ -246,7 +246,7 @@ const questionBank: Question[] = [
     },
     {
         id: 'q20',
-        text: 'Theo Hồ Chí Minh, đoàn kết có ý nghĩa như thế nào?',
+        text: 'Theo Hồ Chí Minh, đoàn kết có ý nghĩa như thế n��o?',
         choices: [
             { id: 'a', text: 'Sức mạnh của dân tộc' },
             { id: 'b', text: 'Điều kiện thắng lợi' },
@@ -295,10 +295,10 @@ const QuizSystem: React.FC = () => {
 
     // Timer
     useEffect(() => {
-        let interval: NodeJS.Timeout | null = null
+        let interval: number | null = null
 
         if (phase === 'quiz' && timeLeft > 0) {
-            interval = setInterval(() => {
+            interval = window.setInterval(() => {
                 setTimeLeft(prev => {
                     if (prev <= 1) {
                         handleSubmit()
@@ -310,7 +310,7 @@ const QuizSystem: React.FC = () => {
         }
 
         return () => {
-            if (interval) clearInterval(interval)
+            if (interval) window.clearInterval(interval)
         }
     }, [phase, timeLeft])
 

@@ -35,7 +35,7 @@ export const useChatbaseWidget = () => {
       // Initialize chatbase with your specific configuration
       (function(){
         if(!window.chatbase || window.chatbase("getState") !== "initialized") {
-          window.chatbase = (...args: any[]) => {
+          window.chatbase = (...args: unknown[]) => {
             if(!window.chatbase.q) {
               window.chatbase.q = [];
             }
@@ -47,7 +47,7 @@ export const useChatbaseWidget = () => {
               if(prop === "q") {
                 return target.q;
               }
-              return (...args: any[]) => target(prop, ...args);
+              return (...args: unknown[]) => target(prop, ...args);
             }
           });
         }

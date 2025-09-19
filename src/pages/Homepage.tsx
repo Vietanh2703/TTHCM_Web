@@ -7,7 +7,7 @@ import type {BlogPost} from '../types/blog';
 
 
 const Homepage = () => {
-    useChatbaseWidget(true);  // Show widget on homepage
+    useChatbaseWidget(); // Load Chatbase only on homepage
 
     const [selectedItem, setSelectedItem] = useState<BlogPost | null>(null);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -54,7 +54,7 @@ const Homepage = () => {
           <li>Khám phá động vật hoang dã</li>
         </ul>
         
-        <p>Được dẫn dắt bởi photographer Sarah Chen, chuyến phiêu lưu này sẽ mang đến cho bạn những trải nghiệm không thể quên và những bức ảnh đẹp nhất về thiên nhiên hoang dã.</p>
+        <p>Được dẫn dắt bởi photographer Sarah Chen, chuyến phiêu lưu này sẽ mang đ��n cho bạn những trải nghiệm không thể quên và những bức ảnh đẹp nhất về thiên nhiên hoang dã.</p>
       `,
             date: "March 10, 2024",
             readTime: "8 min read"
@@ -67,7 +67,7 @@ const Homepage = () => {
             image: image1,
             bgColor: "bg-amber-600",
             content: `
-        <p>Khám phá vẻ đẹp kiến trúc đô thị hiện đại qua lăng kính nghệ thuật. Những tòa nhà chọc trời, cầu đường và không gian công cộng tạo nên bức tranh đô thị đầy màu sắc.</p>
+        <p>Khám phá vẻ đẹp kiến trúc đô thị hiện đại qua lăng kính nghệ thu���t. Những tòa nhà chọc trời, cầu đường và không gian công cộng tạo nên bức tranh đô thị đầy màu sắc.</p>
         
         <h3>Điểm nhấn kiến trúc:</h3>
         <ul>
@@ -90,7 +90,7 @@ const Homepage = () => {
             image: image2,
             bgColor: "bg-blue-700",
             content: `
-        <p>Lặn sâu vào thế giới dưới nước bí ẩn và khám phá những sinh vật biển kỳ diệu. Một cuộc phiêu lưu dưới đại dương xanh thẳm đầy màu sắc và sự sống.</p>
+        <p>L��n sâu vào thế giới dưới nước bí ẩn và khám phá những sinh vật biển kỳ diệu. Một cuộc phiêu lưu dưới đại dương xanh thẳm đầy màu sắc và sự sống.</p>
         
         <h3>Khám phá đại dương:</h3>
         <ul>
@@ -142,7 +142,7 @@ const Homepage = () => {
         <ul>
           <li>Những con phố ánh đèn rực rỡ</li>
           <li>Các quán café đêm ấm cúng</li>
-          <li>Nghệ thuật đường phố sống động</li>
+          <li>Nghệ thuật đư���ng phố sống động</li>
           <li>Những câu chuyện thú vị của người dân đêm</li>
         </ul>
         

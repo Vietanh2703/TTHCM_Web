@@ -2,19 +2,28 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Homepage from './pages/Homepage'
 import QuizPage from './pages/QuizPage'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React from 'react'
 
-function App() {
+const AppContent: React.FC = () => {
   return (
-    <HashRouter>
-      <div className="app-container">
-        <Navbar />
+    <div className="App">
+      <Navbar />
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/quiz" element={<QuizPage />} />
         </Routes>
-      </div>
-    </HashRouter>
+      </main>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   )
 }
 

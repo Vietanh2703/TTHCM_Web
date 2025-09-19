@@ -34,6 +34,15 @@
   gap: 10px;
   text-decoration: none;
   color: var(--hcm-text);
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hcm-navbar__brand:hover {
+  opacity: 0.8;
 }
 
 .hcm-navbar__icon {

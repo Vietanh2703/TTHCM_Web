@@ -29,5 +29,6 @@
   .hero h1 { font-size: 2.4rem; }
 }
 
+/* Remove Chatbase CSS overrides - let JavaScript handle it */
 
 /* Page-specific gallery styles moved to pages/Homepage.css */

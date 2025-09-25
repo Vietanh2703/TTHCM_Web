@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Homepage from './pages/Homepage'
 import QuizPage from './pages/QuizPage'
 import AdBlockDetector from './components/AdBlockDetector'
+import Footer from './components/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React from 'react'
 import { Analytics } from "@vercel/analytics/react"
@@ -19,6 +20,7 @@ const AppContent: React.FC = () => {
         </Routes>
       </main>
       <Analytics />
+      <Footer />
     </div>
   )
 }

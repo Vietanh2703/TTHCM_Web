@@ -528,7 +528,7 @@ const QuizSystem: React.FC = () => {
         return (
             <div className="quiz-container">
                 <div className="intro-card">
-                    <h1 className="intro-title">TRẮC NGHIỆM TƯ TƯỞNG HỒ CHÍ MINH</h1>
+                    <h1 className="intro-title">TRẮC NGHIỆM TƯ TƯỞNG HỒ CHÍ MINH VỀ CON NGƯỜI</h1>
 
                     <div className="intro-rules">
                         <h2>📋 Quy định</h2>

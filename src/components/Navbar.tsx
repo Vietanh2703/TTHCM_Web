@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
     <nav className="hcm-navbar" aria-label="Điều hướng chính">
       <div className="hcm-navbar__inner">
         <button onClick={handleHomeClick} className="hcm-navbar__brand" aria-label="Trang chủ">
-          <span className="hcm-navbar__title">Tư tưởng Hồ Chí Minh về con người</span>
+          <span className="hcm-navbar__title">Báo tường Hồ Chí Minh về con người</span>
         </button>
 
         <input type="checkbox" id="hcm-nav-toggle" className="hcm-navbar__toggle" aria-label="Mở menu" />

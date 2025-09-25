@@ -1,9 +1,16 @@
+@font-face {
+  font-family: 'LHanoienneTypeface';
+  src: url('/fonts/LHanoienneTypeface.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --hcm-bg: #ffffff; /* light background */
   --hcm-surface: #ffffff;
-  --hcm-primary: #2ecc71; /* modern green */
-  --hcm-primary-600: #27ae60;
-  --hcm-accent: #2ecc71; /* accent aligns with primary */
+  --hcm-primary: #cc2e2e; /* modern green */
+  --hcm-primary-600: #ae2740;
   --hcm-text: #213547;
   --hcm-muted: #5b6b76;
   --hcm-shadow: 0 8px 24px rgba(0,0,0,0.08);
@@ -50,8 +57,6 @@
   align-items: center;
   justify-content: center;
   color: var(--hcm-primary);
-  background: rgba(46, 204, 113, 0.08);
-  border: 1px solid rgba(46, 204, 113, 0.25);
   width: 40px;
   height: 40px;
   border-radius: 10px;
@@ -66,6 +71,8 @@
 }
 
 .hcm-navbar__title {
+  font-family: 'LHanoienneTypeface', serif;
+  color: #d32f2f;
   font-weight: 700;
   letter-spacing: 0.3px;
   font-size: 1.05rem;
@@ -80,8 +87,7 @@
 
 .hcm-btn {
   --btn-bg: #ffffff; /* same color as navbar */
-  --btn-color: var(--hcm-text);
-  --btn-border: rgba(0,0,0,0.12);
+  --btn-color: var(--hcm-primary); /* changed to red */
 
   display: inline-flex;
   align-items: center;
@@ -90,23 +96,22 @@
   height: 38px;
   padding: 0 14px;
   border-radius: 10px;
-  border: 1px solid var(--btn-border);
+  border: none;
   background: var(--btn-bg);
   color: var(--btn-color);
   text-decoration: none;
   font-weight: 600;
-  transition: transform 0.15s ease, background 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  transition: transform 0.15s ease, background 220ms ease, color 220ms ease, box-shadow 220ms ease;
   box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 1px 2px rgba(0,0,0,0.04);
 }
-.hcm-btn:focus-visible { outline: 3px solid rgba(46,204,113,0.35); outline-offset: 2px; }
+.hcm-btn:focus-visible { outline: 3px solid rgb(255, 255, 255); outline-offset: 2px; }
 .hcm-btn:hover { transform: translateY(-1px); }
 
 /* On hover, both buttons animate to accent color */
 .hcm-btn:hover {
   background: linear-gradient(180deg, var(--hcm-primary), var(--hcm-primary-600));
   color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 6px 16px rgba(46,204,113,0.28);
+  box-shadow: 0 6px 16px rgba(204, 46, 46, 0.28);
 }
 
 /* Keep variants for semantics, but base style is white */
@@ -161,3 +166,4 @@
   }
   .hcm-navbar__actions .hcm-btn { width: 100%; justify-content: flex-start; }
 }
+

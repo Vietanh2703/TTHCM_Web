@@ -57,11 +57,10 @@ const AdBlockDetector: React.FC = () => {
         <div className="adblock-modal-overlay">
             <div className="adblock-modal">
                 <div className="adblock-modal-header">
-                    <h2>🚫 AdBlock được phát hiện</h2>
+                    <h2>AdBlock được phát hiện</h2>
                 </div>
 
                 <div className="adblock-modal-body">
-                    <p>Chúng tôi phát hiện bạn đang sử dụng AdBlock.</p>
                     <p>
                         Vui lòng tắt AdBlock để hỗ trợ trang web này hoạt động đầy đủ và tốt
                         nhất.(Chỉ mục đích thu thập số lượng truy cập, không vì mục đích thu thập thông tin cá nhân hay tổ chức nào)

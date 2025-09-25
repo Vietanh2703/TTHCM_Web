@@ -84,12 +84,6 @@ const AdBlockDetector: React.FC = () => {
                     >
                         Tải lại trang
                     </button>
-                    <button
-                        onClick={() => setIsAdBlockDetected(false)}
-                        className="btn-secondary"
-                    >
-                        Đóng
-                    </button>
                 </div>
             </div>
         </div>

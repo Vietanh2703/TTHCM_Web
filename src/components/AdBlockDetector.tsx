@@ -64,7 +64,7 @@ const AdBlockDetector: React.FC = () => {
                     <p>Chúng tôi phát hiện bạn đang sử dụng AdBlock.</p>
                     <p>
                         Vui lòng tắt AdBlock để hỗ trợ trang web này hoạt động đầy đủ và tốt
-                        nhất.
+                        nhất.(Chỉ mục đích thu thập số lượng truy cập, không vì mục đích thu thập thông tin cá nhân hay tổ chức nào)
                     </p>
 
                     <div className="adblock-instructions">

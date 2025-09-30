@@ -14,6 +14,7 @@ const Homepage = () => {
     const [isContentVisible, setIsContentVisible] = useState(true);
     const [isImageFullscreen, setIsImageFullscreen] = useState(false);
     const [isImageRotated, setIsImageRotated] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const galleryItems: BlogPost[] = [
         {
             id: 1,
@@ -23,7 +24,7 @@ const Homepage = () => {
             image: image1,
             bgColor: "bg-emerald-600",
             content: `
-        <p>Khám phá không gian sống hiện đại với thiết kế độc đáo tại 69 Flavio Burg Suite. Căn hộ này mang đến trải nghiệm sống đẳng cấp với kiến trúc tinh tế và nội thất cao cấp.</p>
+        <p>Khám phá không gian sống hiện đại với thiết kế độc đáo tại 69 Flavio Burg Suite. Căn hộ này mang đến trải nghiệm sống đẳng cấp với kiến tr��c tinh tế và nội thất cao cấp.</p>
         
         <h3>Đặc điểm nổi bật:</h3>
         <ul>
@@ -79,7 +80,7 @@ const Homepage = () => {
           <li>Không gian xanh trong lòng đô thị</li>
         </ul>
         
-        <p>Qua góc nhìn của kiến trúc sư Mike Johnson, chúng ta sẽ hiểu rõ hơn về cách thức các công trình kiến trúc định hình nên diện mạo và linh hồn của một thành phố hiện đại.</p>
+        <p>Qua góc nhìn của kiến trúc sư Mike Johnson, chúng ta sẽ hiểu rõ hơn về cách thức các công trình kiến trúc ��ịnh hình nên diện mạo và linh hồn của một thành phố hiện đại.</p>
       `,
             date: "March 8, 2024",
             readTime: "6 min read"
@@ -115,7 +116,7 @@ const Homepage = () => {
             image: image1,
             bgColor: "bg-orange-600",
             content: `
-        <p>Hành trình qua những sa mạc rộng lớn và khám phá vẻ đẹp hoang sơ của thiên nhiên. Những cồn cát vàng, hoàng hôn rực rỡ và bầu trời đêm đầy sao.</p>
+        <p>Hành trình qua những sa mạc rộng lớn và khám phá vẻ đẹp hoang sơ của thi��n nhiên. Những cồn cát vàng, hoàng hôn rực rỡ và bầu trời đêm đầy sao.</p>
         
         <h3>Trải nghiệm sa mạc:</h3>
         <ul>
@@ -140,7 +141,7 @@ const Homepage = () => {
             content: `
         <p>Khám phá nhịp sống về đêm của thành phố qua những ánh đèn neon rực rỡ và những con phố tấp nập. Thế giới đêm với những câu chuyện riêng đầy hấp dẫn.</p>
         
-        <h3>Cuộc sống đêm thành phố:</h3>
+        <h3>Cuộc sống đêm thành ph���:</h3>
         <ul>
           <li>Những con phố ánh đèn rực rỡ</li>
           <li>Các quán café đêm ấm cúng</li>
@@ -160,6 +161,21 @@ const Homepage = () => {
         setIsPopupOpen(true);
     };
 
+    // Check if a device is mobile
+    const checkMobile = () => {
+        const mobile = window.innerWidth <= 768;
+        setIsMobile(mobile);
+        return mobile;
+    };
+
+    // Handle window resize
+    useState(() => {
+        checkMobile();
+        const handleResize = () => checkMobile();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const closePopup = () => {
         setIsPopupOpen(false);
         setIsContentVisible(true);
@@ -169,9 +185,8 @@ const Homepage = () => {
     };
 
     const toggleContent = () => {
-        // Check if on mobile device
-        const isMobile = window.innerWidth <= 768;
-        if (isMobile) {
+        const mobile = checkMobile();
+        if (mobile) {
             setIsImageRotated(!isImageRotated);
         } else {
             setIsContentVisible(!isContentVisible);
@@ -246,7 +261,7 @@ const Homepage = () => {
                         </button>
 
                         {/* Popup Content */}
-                        <div className={`popup-content ${!isContentVisible ? 'content-hidden' : ''}`}>
+                        <div className={`popup-content ${!isContentVisible ? 'content-hidden' : ''} ${isImageRotated ? 'image-rotated-mode' : ''}`}>
                             {/* Left Side - Image */}
                             <div className="popup-image-section">
                                 <img
@@ -260,13 +275,13 @@ const Homepage = () => {
                                     <button 
                                         className="content-toggle-btn"
                                         onClick={toggleContent}
-                                        title={window.innerWidth <= 768 ?
+                                        title={isMobile ?
                                             (isImageRotated ? "Portrait View" : "Landscape View") :
                                             (isContentVisible ? "Hide Content" : "Show Content")
                                         }
                                     >
-                                        {window.innerWidth <= 768 ?
-                                            (isImageRotated ? "🔄" : "🔄") :
+                                        {isMobile ?
+                                            (isImageRotated ? "📱" : "📺") :
                                             (isContentVisible ? "▶" : "◀")
                                         }
                                     </button>
@@ -274,7 +289,7 @@ const Homepage = () => {
                             </div>
 
                             {/* Right Side - Content */}
-                            <div className={`popup-text-section ${!isContentVisible ? 'content-collapsed' : ''}`}>
+                            <div className={`popup-text-section ${!isContentVisible ? 'content-collapsed' : ''} ${isImageRotated && isMobile ? 'content-hidden-mobile' : ''}`}>
                                 <div className="popup-header">
                                     <h1 className="popup-title">{selectedItem.title}</h1>
 
@@ -343,4 +358,3 @@ const Homepage = () => {
 
 
 export default Homepage;
-

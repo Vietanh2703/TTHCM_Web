@@ -12,6 +12,7 @@ const Homepage = () => {
     const [selectedItem, setSelectedItem] = useState<BlogPost | null>(null);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isContentVisible, setIsContentVisible] = useState(true);
+    const [isImageFullscreen, setIsImageFullscreen] = useState(false);
     const galleryItems: BlogPost[] = [
         {
             id: 1,
@@ -161,11 +162,24 @@ const Homepage = () => {
     const closePopup = () => {
         setIsPopupOpen(false);
         setIsContentVisible(true); // Reset content visibility when closing
+        setIsImageFullscreen(false); // Reset fullscreen state
         setTimeout(() => setSelectedItem(null), 300); // Delay to allow animation
     };
 
     const toggleContent = () => {
         setIsContentVisible(!isContentVisible);
+    };
+
+    const handleImageClick = () => {
+        // Check if on mobile device
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            setIsImageFullscreen(true);
+        }
+    };
+
+    const closeFullscreenImage = () => {
+        setIsImageFullscreen(false);
     };
 
     return (
@@ -231,18 +245,16 @@ const Homepage = () => {
                                     src={selectedItem.image}
                                     alt={selectedItem.title}
                                     className="popup-image"
+                                    onClick={handleImageClick}
                                 />
                                 <div className="popup-image-overlay">
-                                    <div className="popup-category-tag">
-                                        {selectedItem.category}
-                                    </div>
                                     {/* Toggle Button */}
                                     <button 
                                         className="content-toggle-btn"
                                         onClick={toggleContent}
                                         title={isContentVisible ? "Hide Content" : "Show Content"}
                                     >
-                                        {isContentVisible ? "◀" : "▶"}
+                                        {isContentVisible ? "▶" : "◀"}
                                     </button>
                                 </div>
                             </div>
@@ -278,7 +290,7 @@ const Homepage = () => {
                                 {/* Action Buttons */}
                                 <div className="popup-actions">
                                     <button className="action-btn action-btn-primary">
-                                        <span className="action-icon">❤️</span>
+                                        <span className="action-icon">��️</span>
                                         Like
                                     </button>
                                     <button className="action-btn">
@@ -292,6 +304,22 @@ const Homepage = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Fullscreen Image for Mobile */}
+            {isImageFullscreen && selectedItem && (
+                <div className="fullscreen-image-overlay" onClick={closeFullscreenImage}>
+                    <div className="fullscreen-image-container">
+                        <button className="fullscreen-close" onClick={closeFullscreenImage}>
+                            ✕
+                        </button>
+                        <img
+                            src={selectedItem.image}
+                            alt={selectedItem.title}
+                            className="fullscreen-image"
+                        />
                     </div>
                 </div>
             )}

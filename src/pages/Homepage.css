@@ -940,16 +940,19 @@ html {
     }
 
     .popup-image.image-rotated {
-        transform: rotate(90deg) scale(1.2);
+        transform: rotate(90deg);
         transform-origin: center center;
         object-fit: contain;
         width: 100vh;
         height: 100vw;
-        position: absolute;
+        max-width: 100vh;
+        max-height: 100vw;
+        position: fixed;
         top: 50%;
         left: 50%;
         margin-left: -50vh;
         margin-top: -50vw;
+        z-index: 1;
     }
 
     .popup-image-section {
@@ -965,6 +968,11 @@ html {
     .popup-content.image-rotated-mode .popup-image-section {
         flex: 1;
         height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000;
     }
 
     /* Adjust button for mobile - FIXED POSITIONING */
@@ -1007,7 +1015,11 @@ html {
 /* Mobile portrait specific - FIXED POSITIONING */
 @media (max-width: 768px) and (orientation: portrait) {
     .popup-image.image-rotated {
-        transform: rotate(90deg) scale(1.4);
+        transform: rotate(90deg);
+        width: 100vh;
+        height: 100vw;
+        max-width: 100vh;
+        max-height: 100vw;
     }
 
     .content-toggle-btn {

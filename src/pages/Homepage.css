@@ -663,9 +663,11 @@ html {
     /* Only allow scrolling in article content */
     .popup-article-content {
         overflow-y: auto !important; /* Only article content can scroll */
-        height: calc(65vh - 140px) !important; /* Adjust height to fit in available space */
-        flex: 1 !important;
-        padding: 0 1.5rem;
+        overflow-x: hidden !important;
+        flex: 1 1 auto !important; /* Allow flexible height */
+        min-height: 0 !important; /* Important for flex scrolling */
+        padding: 0 1.5rem 2rem 1.5rem; /* Add bottom padding for better UX */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .popup-actions {
@@ -730,10 +732,12 @@ html {
     }
 
     .popup-article-content {
-        height: calc(70vh - 120px) !important; /* Adjust for smaller header on mobile */
         overflow-y: auto !important;
-        flex: 1 !important;
-        padding: 0 1rem;
+        overflow-x: hidden !important;
+        flex: 1 1 auto !important; /* Allow flexible height */
+        min-height: 0 !important; /* Important for flex scrolling */
+        padding: 0 1rem 2rem 1rem; /* Add bottom padding */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .popup-actions {

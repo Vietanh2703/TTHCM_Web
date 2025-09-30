@@ -13,6 +13,7 @@ const Homepage = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isContentVisible, setIsContentVisible] = useState(true);
     const [isImageFullscreen, setIsImageFullscreen] = useState(false);
+    const [isImageRotated, setIsImageRotated] = useState(false);
     const galleryItems: BlogPost[] = [
         {
             id: 1,
@@ -73,7 +74,7 @@ const Homepage = () => {
         <h3>Điểm nhấn kiến trúc:</h3>
         <ul>
           <li>Các tòa nhà biểu tượng của thành phố</li>
-          <li>Thiết kế công trình công cộng sáng tạo</li>
+          <li>Thi���t kế công trình công cộng sáng tạo</li>
           <li>Sự kết hợp giữa cổ điển và hiện đại</li>
           <li>Không gian xanh trong lòng đô thị</li>
         </ul>
@@ -91,7 +92,7 @@ const Homepage = () => {
             image: image2,
             bgColor: "bg-blue-700",
             content: `
-        <p>L��n sâu vào thế giới dưới nước bí ẩn và khám phá những sinh vật biển kỳ diệu. Một cuộc phiêu lưu dưới đại dương xanh thẳm đầy màu sắc và sự sống.</p>
+        <p>L��n sâu vào th��� giới dưới nước bí ẩn và khám phá những sinh vật biển kỳ diệu. Một cuộc phiêu lưu dưới đại dư��ng xanh thẳm đầy màu sắc và sự sống.</p>
         
         <h3>Khám phá đại dương:</h3>
         <ul>
@@ -161,13 +162,20 @@ const Homepage = () => {
 
     const closePopup = () => {
         setIsPopupOpen(false);
-        setIsContentVisible(true); // Reset content visibility when closing
-        setIsImageFullscreen(false); // Reset fullscreen state
-        setTimeout(() => setSelectedItem(null), 300); // Delay to allow animation
+        setIsContentVisible(true);
+        setIsImageFullscreen(false);
+        setIsImageRotated(false); // Reset rotation state
+        setTimeout(() => setSelectedItem(null), 300);
     };
 
     const toggleContent = () => {
-        setIsContentVisible(!isContentVisible);
+        // Check if on mobile device
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            setIsImageRotated(!isImageRotated);
+        } else {
+            setIsContentVisible(!isContentVisible);
+        }
     };
 
     const handleImageClick = () => {
@@ -244,7 +252,7 @@ const Homepage = () => {
                                 <img
                                     src={selectedItem.image}
                                     alt={selectedItem.title}
-                                    className="popup-image"
+                                    className={`popup-image ${isImageRotated ? 'image-rotated' : ''}`}
                                     onClick={handleImageClick}
                                 />
                                 <div className="popup-image-overlay">
@@ -252,9 +260,15 @@ const Homepage = () => {
                                     <button 
                                         className="content-toggle-btn"
                                         onClick={toggleContent}
-                                        title={isContentVisible ? "Hide Content" : "Show Content"}
+                                        title={window.innerWidth <= 768 ?
+                                            (isImageRotated ? "Portrait View" : "Landscape View") :
+                                            (isContentVisible ? "Hide Content" : "Show Content")
+                                        }
                                     >
-                                        {isContentVisible ? "▶" : "◀"}
+                                        {window.innerWidth <= 768 ?
+                                            (isImageRotated ? "🔄" : "🔄") :
+                                            (isContentVisible ? "▶" : "◀")
+                                        }
                                     </button>
                                 </div>
                             </div>
@@ -329,3 +343,4 @@ const Homepage = () => {
 
 
 export default Homepage;
+

@@ -15,6 +15,11 @@ const Homepage = () => {
     const [isImageFullscreen, setIsImageFullscreen] = useState(false);
     const [isImageRotated, setIsImageRotated] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [showRotateTooltip, setShowRotateTooltip] = useState(() => {
+        // Check if user has seen the tooltip before (localStorage)
+        return !localStorage.getItem('rotateTooltipSeen');
+    });
+
     const galleryItems: BlogPost[] = [
         {
             id: 1,
@@ -70,7 +75,7 @@ const Homepage = () => {
             image: image1,
             bgColor: "bg-amber-600",
             content: `
-        <p>Khám phá vẻ đẹp kiến trúc đô thị hiện đại qua lăng kính nghệ thu���t. Những tòa nhà chọc trời, cầu đường và không gian công cộng tạo nên bức tranh đô thị đầy màu sắc.</p>
+        <p>Khám phá vẻ đẹp kiến trúc đô thị hi���n đại qua lăng kính nghệ thu���t. Những tòa nhà chọc trời, cầu đường và không gian công cộng tạo nên bức tranh đô thị đầy màu sắc.</p>
         
         <h3>Điểm nhấn kiến trúc:</h3>
         <ul>
@@ -180,7 +185,7 @@ const Homepage = () => {
         setIsPopupOpen(false);
         setIsContentVisible(true);
         setIsImageFullscreen(false);
-        setIsImageRotated(false); // Reset rotation state
+        setIsImageRotated(false);
         setTimeout(() => setSelectedItem(null), 300);
     };
 
@@ -188,6 +193,11 @@ const Homepage = () => {
         const mobile = checkMobile();
         if (mobile) {
             setIsImageRotated(!isImageRotated);
+            // Hide tooltip permanently when user clicks rotate button
+            if (showRotateTooltip) {
+                setShowRotateTooltip(false);
+                localStorage.setItem('rotateTooltipSeen', 'true');
+            }
         } else {
             setIsContentVisible(!isContentVisible);
         }
@@ -207,7 +217,6 @@ const Homepage = () => {
 
     return (
         <div className="min-h-screen">
-
             {/* Gallery */}
             <div className="gallery-container">
                 {galleryItems.map((item, index) => (
@@ -285,6 +294,16 @@ const Homepage = () => {
                                             (isContentVisible ? "▶" : "◀")
                                         }
                                     </button>
+
+                                    {/* Rotate Tooltip for Mobile */}
+                                    {isMobile && showRotateTooltip && (
+                                        <div className="rotate-tooltip">
+                                            <div className="tooltip-content">
+                                                <span className="tooltip-text">Bấm để xem toàn màn hình</span>
+                                            </div>
+                                            <div className="tooltip-arrow"></div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 

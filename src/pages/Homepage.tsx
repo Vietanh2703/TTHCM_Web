@@ -290,7 +290,7 @@ const Homepage = () => {
                                         }
                                     >
                                         {isMobile ?
-                                            (isImageRotated ? "📱" : "📺") :
+                                            (isImageRotated ? "📱" : "📱") :
                                             (isContentVisible ? "▶" : "◀")
                                         }
                                     </button>
@@ -333,22 +333,6 @@ const Homepage = () => {
 
                                 <div className="popup-article-content">
                                     <div dangerouslySetInnerHTML={{ __html: selectedItem.content }} />
-                                </div>
-
-                                {/* Action Buttons */}
-                                <div className="popup-actions">
-                                    <button className="action-btn action-btn-primary">
-                                        <span className="action-icon">��️</span>
-                                        Like
-                                    </button>
-                                    <button className="action-btn">
-                                        <span className="action-icon">💬</span>
-                                        Comment
-                                    </button>
-                                    <button className="action-btn">
-                                        <span className="action-icon">📤</span>
-                                        Share
-                                    </button>
                                 </div>
                             </div>
                         </div>

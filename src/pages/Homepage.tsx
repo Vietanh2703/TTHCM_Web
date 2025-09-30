@@ -1,5 +1,5 @@
 import './Homepage.css';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import image1 from '../assets/1.jpg';
 import image2 from '../assets/2.jpg';
 import { useChatbaseWidget } from '../hooks/useChatbaseWidget';
@@ -28,7 +28,7 @@ const Homepage = () => {
         
         <h3>Đặc điểm nổi bật:</h3>
         <ul>
-          <li>Thiết kế open space tạo cảm giác rộng rãi</li>
+          <li>Thiết kế open space tạo cảm giác rộng r��i</li>
           <li>Tầm nhìn panorama ra thành phố</li>
           <li>Nội thất cao cấp imported từ châu Âu</li>
           <li>Hệ thống smart home hiện đại</li>
@@ -47,7 +47,7 @@ const Homepage = () => {
             image: image2,
             bgColor: "bg-slate-700",
             content: `
-        <p>Hành trình khám phá những đỉnh núi hùng vĩ và những cảnh quan thiên nhiên tuyệt đẹp. Trải nghiệm mạo hiểm đầy thú vị với những thử thách đầy hấp dẫn.</p>
+        <p>Hành trình khám phá nh��ng đỉnh núi hùng vĩ và những cảnh quan thiên nhiên tuyệt đẹp. Trải nghiệm mạo hiểm đầy thú vị với những thử thách đầy hấp dẫn.</p>
         
         <h3>Hành trình khám phá:</h3>
         <ul>
@@ -80,7 +80,7 @@ const Homepage = () => {
           <li>Không gian xanh trong lòng đô thị</li>
         </ul>
         
-        <p>Qua góc nhìn của kiến trúc sư Mike Johnson, chúng ta sẽ hiểu rõ hơn về cách thức các công trình kiến trúc ��ịnh hình nên diện mạo và linh hồn của một thành phố hiện đại.</p>
+        <p>Qua góc nhìn của kiến trúc sư Mike Johnson, chúng ta sẽ hiểu rõ hơn về cách thức các công trình kiến trúc �����nh hình nên diện mạo và linh hồn của một thành phố hiện đại.</p>
       `,
             date: "March 8, 2024",
             readTime: "6 min read"
@@ -93,7 +93,7 @@ const Homepage = () => {
             image: image2,
             bgColor: "bg-blue-700",
             content: `
-        <p>L��n sâu vào th��� giới dưới nước bí ẩn và khám phá những sinh vật biển kỳ diệu. Một cuộc phiêu lưu dưới đại dư��ng xanh thẳm đầy màu sắc và sự sống.</p>
+        <p>L��n sâu vào th��� giới dưới nước bí ẩn và khám phá những sinh vật biển kỳ di��u. Một cuộc phiêu lưu dưới đại dư��ng xanh thẳm đầy màu sắc và sự sống.</p>
         
         <h3>Khám phá đại dương:</h3>
         <ul>
@@ -169,7 +169,7 @@ const Homepage = () => {
     };
 
     // Handle window resize
-    useState(() => {
+    useEffect(() => {
         checkMobile();
         const handleResize = () => checkMobile();
         window.addEventListener('resize', handleResize);
